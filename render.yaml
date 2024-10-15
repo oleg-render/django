@@ -3,12 +3,14 @@ databases:
     plan: free
     databaseName: mysite
     user: mysite
+    region: ohio
 
 services:
   - type: web
     plan: free
     name: mysite
     runtime: python
+    region: ohio
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn mysite.asgi:application -k uvicorn.workers.UvicornWorker"
     envVars:
